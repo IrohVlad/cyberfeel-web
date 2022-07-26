@@ -302,10 +302,9 @@ header{
     .sidebar{
         background-color: #131313;
         font-size: 15px;
-        display: flex;
-        flex-direction: column;
-        align-items:center;
-        justify-content: space-between;  
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 80% 20%;
         .sidebar__nav{
             position: relative;
             bottom: 60px;
@@ -531,10 +530,9 @@ footer{
         grid-template-columns: 1fr;
         grid-template-rows: 50px 90vh;
         .sidebar{
-            display: flex;
-            flex-direction: row;
-            align-items:center;
-            justify-content: space-between;  
+            display: grid;
+            grid-template-columns: 80% 20%;
+            grid-template-rows: 1fr;
             .sidebar__nav{
                 height: 100%;
                 display: flex;
@@ -548,7 +546,6 @@ footer{
                 
                 .sidebar__nav_item:not(:last-child){
                     margin: 0 20px 0 0;
-                    
                 }
             }
             .sidebar__language{
@@ -556,7 +553,6 @@ footer{
                 box-sizing: content-box;
                 min-width: 0;
                 height: 100%;
-                width: 100px; 
                 padding: 0 10px;
                 display: flex;
                 align-items: center;
@@ -583,6 +579,9 @@ footer{
             .slider__burger{
                 display: block;
             } 
+            .sidebar__language{
+                width: 100px; 
+            }
         }
         .main__slider{
             .slider__item{
