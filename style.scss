@@ -306,8 +306,7 @@ header{
         grid-template-columns: 1fr;
         grid-template-rows: 80% 20%;
         .sidebar__nav{
-            position: relative;
-            bottom: 60px;
+
             margin: auto auto;
             box-sizing: content-box;
             min-width: 150px; 
@@ -398,9 +397,12 @@ header{
     
 }
 ._btn{
+    cursor: pointer;
     transition: all;
     transition-duration: 0.5s;
-   
+    &:hover{
+        color: #FF2E00;
+    }
 }
 /*-----------------------------------------second section------------------------------------------------------------*/
 .second-section{
@@ -470,7 +472,7 @@ footer{
     .burger{
         border-radius: 50%;
         background-color: rgb(129, 129, 129);
-        transition-property: width, height;
+        transition-property: width, background-color;
         transition-duration: 1s, 1s;
         display: flex;
         align-items: center;
@@ -482,19 +484,22 @@ footer{
             justify-content: space-between;
             height: 18px;
             width: 32px;
-            transition-property: width, background-color;
-            transition-duration: 500ms, 1s;
-            transition-delay: 1s, 0;
+            // transition-property: width, background-color;
+            // transition-duration: 500ms, 1s;
+            // transition-delay: 1s, 0;
             .burger__line{
-                transition-property: width;
-                transition-duration: 500ms;
-                transition-delay: 1s;
+                // transition-property: width;
+                // transition-duration: 500ms;
+                // transition-delay: 1s;
                 border-radius: 2px;
                 background-color:#000;
                 width: 20px;
                 height: 2px;
                 margin: 0 auto;
             }
+        }
+        .burger__content{
+            display: none;
         }
         
     }
@@ -508,6 +513,8 @@ footer{
     width: 100%;
     height: 100%;
     .burger{
+        background-color:#131313;
+        flex-direction: column;
         border-radius: 0;
         height: 500px;
         width: 100%;
@@ -519,6 +526,15 @@ footer{
             .burger__line{
                 margin: 0;
             }
+        }
+        .burger__content{
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content: space-between;
+            height: 100%;
+            width: 100%;
+            
         }
 
     }

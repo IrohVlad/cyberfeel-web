@@ -317,8 +317,6 @@ header {
   grid-template-rows: 80% 20%;
 }
 .first-section .sidebar .sidebar__nav {
-  position: relative;
-  bottom: 60px;
   margin: auto auto;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
@@ -436,12 +434,16 @@ header {
 }
 
 ._btn {
+  cursor: pointer;
   -webkit-transition: all;
   -o-transition: all;
   transition: all;
   -webkit-transition-duration: 0.5s;
        -o-transition-duration: 0.5s;
           transition-duration: 0.5s;
+}
+._btn:hover {
+  color: #FF2E00;
 }
 
 /*-----------------------------------------second section------------------------------------------------------------*/
@@ -529,9 +531,9 @@ footer .footer .footer__btns img:not(:last-child) {
 .header__burger .burger, .slider__burger .burger {
   border-radius: 50%;
   background-color: rgb(129, 129, 129);
-  -webkit-transition-property: width, height;
-  -o-transition-property: width, height;
-  transition-property: width, height;
+  -webkit-transition-property: width, background-color;
+  -o-transition-property: width, background-color;
+  transition-property: width, background-color;
   -webkit-transition-duration: 1s, 1s;
        -o-transition-duration: 1s, 1s;
           transition-duration: 1s, 1s;
@@ -557,31 +559,16 @@ footer .footer .footer__btns img:not(:last-child) {
           justify-content: space-between;
   height: 18px;
   width: 32px;
-  -webkit-transition-property: width, background-color;
-  -o-transition-property: width, background-color;
-  transition-property: width, background-color;
-  -webkit-transition-duration: 500ms, 1s;
-       -o-transition-duration: 500ms, 1s;
-          transition-duration: 500ms, 1s;
-  -webkit-transition-delay: 1s, 0;
-       -o-transition-delay: 1s, 0;
-          transition-delay: 1s, 0;
 }
 .header__burger .burger .lines .burger__line, .slider__burger .burger .lines .burger__line {
-  -webkit-transition-property: width;
-  -o-transition-property: width;
-  transition-property: width;
-  -webkit-transition-duration: 500ms;
-       -o-transition-duration: 500ms;
-          transition-duration: 500ms;
-  -webkit-transition-delay: 1s;
-       -o-transition-delay: 1s;
-          transition-delay: 1s;
   border-radius: 2px;
   background-color: #000;
   width: 20px;
   height: 2px;
   margin: 0 auto;
+}
+.header__burger .burger .burger__content, .slider__burger .burger .burger__content {
+  display: none;
 }
 
 /*-----------------------------------------burger active------------------------------------------------------------*/
@@ -594,6 +581,11 @@ footer .footer .footer__btns img:not(:last-child) {
   height: 100%;
 }
 .burger_active .burger {
+  background-color: #131313;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border-radius: 0;
   height: 500px;
   width: 100%;
@@ -610,6 +602,23 @@ footer .footer .footer__btns img:not(:last-child) {
 }
 .burger_active .burger .lines .burger__line {
   margin: 0;
+}
+.burger_active .burger .burger__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  width: 100%;
 }
 
 /*-----------------------------------------media------------------------------------------------------------*/

@@ -21,6 +21,15 @@ window.addEventListener('DOMContentLoaded', ()=>{
             }
         });
     });
-    
+    const categ = document.querySelectorAll('.sidebar__nav_item');
+    const point = document.querySelector('.burger__content');
+    categ.forEach((item)=>{
+        let elem = document.createElement('div');
+        elem.classList.add('sidebar__nav_item');
+        elem.classList.add('_btn');
+        elem.textContent = item.innerHTML;
+        point.append(elem);
+    });
+    console.log(categ[0]);
 
 });
