@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
-
+/*-----------------------------------------style reset------------------------------------------------------------*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -251,7 +251,7 @@ body{
     background-color: #0C0C0C;
     font-family: inter;
 }
-
+/*-----------------------------------------_styles------------------------------------------------------------*/
 ._wrapper{
     width: inherit;
     overflow: hidden;
@@ -263,6 +263,7 @@ body{
     margin: 0 auto;
     max-width: 1680px;
 }
+/*-----------------------------------------header------------------------------------------------------------*/
 header{
     
     z-index: 3;
@@ -292,6 +293,7 @@ header{
         }
     }
 }
+/*-----------------------------------------first section------------------------------------------------------------*/
 .first-section{
     display: grid;
     grid-template-columns: 1fr 6fr;
@@ -401,6 +403,7 @@ header{
     transition-duration: 0.5s;
    
 }
+/*-----------------------------------------second section------------------------------------------------------------*/
 .second-section{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -434,6 +437,7 @@ header{
 section:not(:first-child){
     margin-top: 70px;
 }
+/*-----------------------------------------footer------------------------------------------------------------*/
 footer{
     background-color: black;
     .footer{
@@ -460,7 +464,7 @@ footer{
         }
     }
 }
-
+/*-----------------------------------------burger------------------------------------------------------------*/
 .header__burger, .slider__burger{
         height: 32px;
         width: 32px;
@@ -496,6 +500,7 @@ footer{
         
     }
 }
+/*-----------------------------------------burger active------------------------------------------------------------*/
 .burger_active{
     z-index: 4;
     position: absolute;
@@ -520,6 +525,7 @@ footer{
     }
     
 }
+/*-----------------------------------------media------------------------------------------------------------*/
 @media(max-width: 970px){
     .first-section{
         grid-template-columns: 1fr;

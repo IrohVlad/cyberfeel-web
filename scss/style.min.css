@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+/*-----------------------------------------style reset------------------------------------------------------------*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -249,6 +250,7 @@ body {
   font-family: inter;
 }
 
+/*-----------------------------------------_styles------------------------------------------------------------*/
 ._wrapper {
   width: inherit;
   overflow: hidden;
@@ -263,6 +265,7 @@ body {
   max-width: 1680px;
 }
 
+/*-----------------------------------------header------------------------------------------------------------*/
 header {
   z-index: 3;
   width: inherit;
@@ -299,6 +302,7 @@ header {
   margin-right: 20px;
 }
 
+/*-----------------------------------------first section------------------------------------------------------------*/
 .first-section {
   display: grid;
   grid-template-columns: 1fr 6fr;
@@ -450,6 +454,7 @@ header {
           transition-duration: 0.5s;
 }
 
+/*-----------------------------------------second section------------------------------------------------------------*/
 .second-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -490,6 +495,7 @@ section:not(:first-child) {
   margin-top: 70px;
 }
 
+/*-----------------------------------------footer------------------------------------------------------------*/
 footer {
   background-color: black;
 }
@@ -525,6 +531,7 @@ footer .footer .footer__btns img:not(:last-child) {
   margin-right: 15px;
 }
 
+/*-----------------------------------------burger------------------------------------------------------------*/
 .header__burger, .slider__burger {
   height: 32px;
   width: 32px;
@@ -587,6 +594,7 @@ footer .footer .footer__btns img:not(:last-child) {
   margin: 0 auto;
 }
 
+/*-----------------------------------------burger active------------------------------------------------------------*/
 .burger_active {
   z-index: 4;
   position: absolute;
@@ -614,6 +622,7 @@ footer .footer .footer__btns img:not(:last-child) {
   margin: 0;
 }
 
+/*-----------------------------------------media------------------------------------------------------------*/
 @media (max-width: 970px) {
   .first-section {
     grid-template-columns: 1fr;
