@@ -24,8 +24,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
         });
     });
 
-/*-----------------------------------------Заполнение хедера------------------------------------------------------------*/
-    const headerContent = ['INFORMATION', 'ABOUT ME', 'CONTACT'];   
+/*-----------------------------------------Заполнение хедера------------------------------------------------------------*/ 
 
     const headerItem = document.querySelector('.header__nav');
     const headerBurger = document.querySelector('.header__burger_content');
@@ -42,12 +41,11 @@ window.addEventListener('DOMContentLoaded', ()=>{
         headerItem.append(elem1);
         headerBurger.append(elem);
     }
-    headerContent.forEach((item)=>{
-        headerFill(item);
-    });
+    // headerContent.forEach((item)=>{
+    //     headerFill(item);
+    // });
 
  /*-----------------------------------------Заполнение сайдбара------------------------------------------------------------*/
-    const sliderContent = ['DIGITAL ART', 'CONCEPT ART', '3D VISUALISATION', 'TATTOO', 'HANDMADE'];
 
     const sidebarItem = document.querySelector('.sidebar__nav');
     const sidebarBurger = document.querySelectorAll('.burger__content');
@@ -70,8 +68,23 @@ window.addEventListener('DOMContentLoaded', ()=>{
         sidebarBurger[0].append(elem);
         sidebarBurger[1].append(elem2);
     }
-    sliderContent.forEach((item)=>{
-        sidebarFill(item);
-    });
+    // sliderContent.forEach((item)=>{
+    //     sidebarFill(item);
+    // });
+    
 
+    fetch('db.json', {
+        method: 'GET',
+        headers: {
+            'Content-type': 'aplication/json'
+        }
+    }).then(data=> data.json())
+    .then(data=> {
+        data.slider.forEach((item)=>{
+            sidebarFill(item);
+        });
+        data.header.forEach((item)=>{
+            headerFill(item);
+        });
+    });
 });

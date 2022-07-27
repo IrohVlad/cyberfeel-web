@@ -263,6 +263,14 @@ body{
     margin: 0 auto;
     max-width: 1680px;
 }
+._btn{
+    cursor: pointer;
+    transition: all;
+    transition-duration: 0.5s;
+    &:hover{
+        color: #FF2E00;
+    }
+}
 /*-----------------------------------------header------------------------------------------------------------*/
 header{
     
@@ -396,14 +404,6 @@ header{
     }
     
 }
-._btn{
-    cursor: pointer;
-    transition: all;
-    transition-duration: 0.5s;
-    &:hover{
-        color: #FF2E00;
-    }
-}
 /*-----------------------------------------second section------------------------------------------------------------*/
 .second-section{
     display: grid;
@@ -442,7 +442,7 @@ section:not(:first-child){
 footer{
     background-color: black;
     .footer{
-        height: 400px;
+        height: 250px;
         color: #6A6A6A;
         display: flex;
         flex-direction: column;
@@ -545,6 +545,64 @@ footer{
     }
     
 }
+/*-----------------------------------------galary slider------------------------------------------------------------*/
+.galary__section{
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(auto, 100vh) 50px;
+    .galary__slider {
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        img{
+            object-fit: cover;
+            max-height: 100%;
+            max-width: 100%;
+        }
+    }
+    .slider__burger{
+        display: none;
+    }
+    .sidebar{
+        background-color: #131313;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        .sidebar__nav{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            .sidebar__nav_item:not(:last-child){
+                margin-right: 20px;
+            }
+        }
+    }
+}
+/*-----------------------------------------galary grid------------------------------------------------------------*/
+.gallary__grid{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+    .gallary__grid-item{
+        
+        background-color:#000;
+        img{
+            box-sizing:content-box;
+            margin: 5px;
+            object-fit: cover;
+            max-height: 100%;
+            max-width: 100%;
+        }
+        .gallary__grid-title{
+            text-align: center;
+            color:white;
+            height: fit-content;
+        }
+    }
+}
 /*-----------------------------------------media------------------------------------------------------------*/
 @media(max-width: 970px){
     .first-section{
@@ -626,7 +684,42 @@ footer{
             }
         }
     }
+    .galary__section{
+        color: white;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 50px;
+        .galary__slider {
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            img{
+                object-fit: cover;
+                max-height: 100%;
+                max-width: 100%;
+            }
+        }
+        .slider__burger{
+            display: none;
+        }
+        .sidebar{
+            background-color: #131313;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            .sidebar__nav{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                .sidebar__nav_item:not(:last-child){
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
 }
+
 @media(max-width:550px){
     .header{
         .header__burger{
@@ -715,6 +808,28 @@ footer{
                 bottom: 100px;
                 right: 150px;
                 
+            }
+        }
+    }
+    .galary__section{
+        color: white;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        
+        .sidebar{
+            background-color: #131313;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            .sidebar__nav{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .sidebar__nav_item:not(:last-child){
+                    margin: 0 0 20px 0;
+                }
             }
         }
     }

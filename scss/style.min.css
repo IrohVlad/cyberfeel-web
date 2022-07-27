@@ -265,6 +265,19 @@ body {
   max-width: 1680px;
 }
 
+._btn {
+  cursor: pointer;
+  -webkit-transition: all;
+  -o-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+       -o-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+._btn:hover {
+  color: #FF2E00;
+}
+
 /*-----------------------------------------header------------------------------------------------------------*/
 header {
   z-index: 3;
@@ -433,19 +446,6 @@ header {
   width: 15px;
 }
 
-._btn {
-  cursor: pointer;
-  -webkit-transition: all;
-  -o-transition: all;
-  transition: all;
-  -webkit-transition-duration: 0.5s;
-       -o-transition-duration: 0.5s;
-          transition-duration: 0.5s;
-}
-._btn:hover {
-  color: #FF2E00;
-}
-
 /*-----------------------------------------second section------------------------------------------------------------*/
 .second-section {
   display: grid;
@@ -492,7 +492,7 @@ footer {
   background-color: black;
 }
 footer .footer {
-  height: 400px;
+  height: 250px;
   color: #6A6A6A;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -627,6 +627,91 @@ footer .footer .footer__btns img:not(:last-child) {
   margin-bottom: 20px;
 }
 
+/*-----------------------------------------galary slider------------------------------------------------------------*/
+.galary__section {
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(auto, 100vh) 50px;
+}
+.galary__section .galary__slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.galary__section .galary__slider img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 100%;
+  max-width: 100%;
+}
+.galary__section .slider__burger {
+  display: none;
+}
+.galary__section .sidebar {
+  background-color: #131313;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.galary__section .sidebar .sidebar__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.galary__section .sidebar .sidebar__nav .sidebar__nav_item:not(:last-child) {
+  margin-right: 20px;
+}
+
+/*-----------------------------------------galary grid------------------------------------------------------------*/
+.gallary__grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+}
+.gallary__grid .gallary__grid-item {
+  background-color: #000;
+}
+.gallary__grid .gallary__grid-item img {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  margin: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 100%;
+  max-width: 100%;
+}
+.gallary__grid .gallary__grid-item .gallary__grid-title {
+  text-align: center;
+  color: white;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 /*-----------------------------------------media------------------------------------------------------------*/
 @media (max-width: 970px) {
   .first-section {
@@ -728,6 +813,62 @@ footer .footer .footer__btns img:not(:last-child) {
     -webkit-transition-duration: 0.5s;
          -o-transition-duration: 0.5s;
             transition-duration: 0.5s;
+  }
+  .galary__section {
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 50px;
+  }
+  .galary__section .galary__slider {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .galary__section .galary__slider img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    max-height: 100%;
+    max-width: 100%;
+  }
+  .galary__section .slider__burger {
+    display: none;
+  }
+  .galary__section .sidebar {
+    background-color: #131313;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .galary__section .sidebar .sidebar__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .galary__section .sidebar .sidebar__nav .sidebar__nav_item:not(:last-child) {
+    margin-right: 20px;
   }
 }
 @media (max-width: 550px) {
@@ -844,5 +985,41 @@ footer .footer .footer__btns img:not(:last-child) {
     position: static;
     height: 20px;
     width: 15px;
+  }
+  .galary__section {
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+  .galary__section .sidebar {
+    background-color: #131313;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .galary__section .sidebar .sidebar__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .galary__section .sidebar .sidebar__nav .sidebar__nav_item:not(:last-child) {
+    margin: 0 0 20px 0;
   }
 }/*# sourceMappingURL=style.min.css.map */
