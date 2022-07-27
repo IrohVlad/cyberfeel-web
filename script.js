@@ -7,6 +7,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
     // .then(data => console.log(data))
     // .catch(data => console.log('error'));
 
+
+/*-----------------------------------------Механика бургера------------------------------------------------------------*/
     const burgers = document.querySelectorAll('.burger');
     burgers.forEach(item=>{
         item.addEventListener('click', (e)=>{
@@ -21,15 +23,55 @@ window.addEventListener('DOMContentLoaded', ()=>{
             }
         });
     });
-    const categ = document.querySelectorAll('.sidebar__nav_item');
-    const point = document.querySelector('.burger__content');
-    categ.forEach((item)=>{
-        let elem = document.createElement('div');
+
+/*-----------------------------------------Заполнение хедера------------------------------------------------------------*/
+    const headerContent = ['INFORMATION', 'ABOUT ME', 'CONTACT'];   
+
+    const headerItem = document.querySelector('.header__nav');
+    const headerBurger = document.querySelector('.header__burger_content');
+ 
+    function headerFill(content){
+        let elem = document.createElement('li');
+        elem.classList.add('header__nav_item');
+        elem.classList.add('_btn');
+        elem.textContent = content;
+        let elem1 = document.createElement('li');
+        elem1.classList.add('header__nav_item');
+        elem1.classList.add('_btn');
+        elem1.textContent = content;
+        headerItem.append(elem1);
+        headerBurger.append(elem);
+    }
+    headerContent.forEach((item)=>{
+        headerFill(item);
+    });
+
+ /*-----------------------------------------Заполнение сайдбара------------------------------------------------------------*/
+    const sliderContent = ['DIGITAL ART', 'CONCEPT ART', '3D VISUALISATION', 'TATTOO', 'HANDMADE'];
+
+    const sidebarItem = document.querySelector('.sidebar__nav');
+    const sidebarBurger = document.querySelectorAll('.burger__content');
+
+
+    function sidebarFill(content){
+        let elem = document.createElement('li');
         elem.classList.add('sidebar__nav_item');
         elem.classList.add('_btn');
-        elem.textContent = item.innerHTML;
-        point.append(elem);
+        elem.textContent = content;
+        let elem1 = document.createElement('li');
+        elem1.classList.add('sidebar__nav_item');
+        elem1.classList.add('_btn');
+        elem1.textContent = content;
+        let elem2 = document.createElement('li');
+        elem2.classList.add('sidebar__nav_item');
+        elem2.classList.add('_btn');
+        elem2.textContent = content;
+        sidebarItem.append(elem1);
+        sidebarBurger[0].append(elem);
+        sidebarBurger[1].append(elem2);
+    }
+    sliderContent.forEach((item)=>{
+        sidebarFill(item);
     });
-    console.log(categ[0]);
 
 });

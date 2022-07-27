@@ -500,6 +500,7 @@ footer{
         }
         .burger__content{
             display: none;
+            
         }
         
     }
@@ -516,7 +517,7 @@ footer{
         background-color:#131313;
         flex-direction: column;
         border-radius: 0;
-        height: 500px;
+        height: fit-content;
         width: 100%;
         align-items:flex-start;
         justify-content: end;
@@ -528,12 +529,16 @@ footer{
             }
         }
         .burger__content{
+            padding: 10px 0;
             display: flex;
             flex-direction: column;
             align-items:center;
-            justify-content: space-between;
+            justify-content: center;
             height: 100%;
             width: 100%;
+            li:not(:last-child){
+                margin-bottom: 20px;
+            }
             
         }
 
