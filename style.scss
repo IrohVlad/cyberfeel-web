@@ -318,7 +318,6 @@ header{
 
             margin: auto auto;
             box-sizing: content-box;
-            min-width: 150px; 
             padding: 0 10px;
             .sidebar__nav_item:not(:last-child){
                 margin-bottom: 20px;
@@ -328,9 +327,7 @@ header{
             display: none;
         }
         .sidebar__language{
-            margin: 0 auto 15px auto;
             box-sizing: content-box;
-            min-width: 150px; 
             padding: 0 10px;
             display: flex;
             align-items: center;
@@ -371,7 +368,7 @@ header{
             z-index: 2;
             width: 100%;
             .slider__title{
-                width: fit-content;
+                text-align: center;
                 font-size: 50px;
                 margin-bottom: 40px;
             }
@@ -386,21 +383,6 @@ header{
                 transition-duration: 0.5s;
                 
             }
-        }
-        .slider__vector{
-            height: 20px;
-            width: 50px;
-            display: flex;
-            justify-content: space-between;
-            img{
-                position: static;
-                height: 20px;
-                width: 15px;   
-            }
-            position: absolute;
-            bottom: 100px;
-            right: 150px;
-            
         }
     }
     
@@ -656,9 +638,8 @@ footer{
             grid-template-columns: 80% 20%;
             grid-template-rows: 1fr;
             .sidebar__nav{
-                height: 100%;
                 display: flex;
-                position: static;
+
                 align-items:center;
                 box-sizing: content-box;
                 min-width: 150px; 
@@ -671,15 +652,7 @@ footer{
                 }
             }
             .sidebar__language{
-                margin: 0 0 0 0;
-                box-sizing: content-box;
-                min-width: 0;
                 height: 100%;
-                padding: 0 10px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                
             }
             
         }
@@ -687,8 +660,6 @@ footer{
 }
 @media(max-width:750px){
     .first-section{
-        grid-template-columns: 1fr;
-        grid-template-rows: 50px 90vh;
         position: relative;
         .sidebar{
             display: flex;
@@ -703,27 +674,6 @@ footer{
             } 
             .sidebar__language{
                 width: 100px; 
-            }
-        }
-        .main__slider{
-            .slider__item{
-                .slider__title{
-                    text-align: center;
-                    width: fit-content;
-                    font-size: 50px;
-                    margin-bottom: 40px;
-                }
-                .slider__button{
-                    width: fit-content;
-                    margin: 6px 0;
-                    padding: 12px 20px;
-                    color: #FF2E00;
-                    border: 2px solid #FF2E00;
-                    font-size: 30px;
-                    transition: all;
-                    transition-duration: 0.5s;
-                    
-                }
             }
         }
     }
@@ -778,79 +728,17 @@ footer{
         grid-template-columns: 100%;
         grid-template-rows: 300px;
         .sidebar{
-            display: flex;
-            flex-direction: row;
-            align-items:center;
-            justify-content: space-between;  
             display: none;
-            .slider__burger{
-                display: block;
-            } 
         }
         .main__slider{
-            position: relative;
-            .gradient{
-                top: 0;
-                left: 0;
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                z-index: 1;
-                content: '';
-                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 83.85%, #000000 100%), radial-gradient(43.15% 128.87% at 6.88% 15.79%, rgba(0, 0, 0, 0.71) 0%, rgba(0, 0, 0, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, linear-gradient(90deg, #000000 0.26%, rgba(0, 0, 0, 0) 50.04%);
-                
-            }
-            video{
-                position: absolute;
-                object-fit: cover;
-                object-position: center;
-                z-index: 0;
-                width: 100%;
-                height: 100%;
-            }
             .slider__item{
-                box-sizing:content-box;
-                
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                height: 100%;
-                z-index: 2;
-                width: 100%;
                 .slider__title{
-                    text-align: center;
-                    width: fit-content;
                     font-size: 30px;
-                    margin-bottom: 40px;
                 }
                 .slider__button{
-                    width: fit-content;
-                    margin: 6px 0;
-                    padding: 12px 20px;
-                    color: #FF2E00;
                     border: 1px solid #FF2E00;
                     font-size: 15px;
-                    transition: all;
-                    transition-duration: 0.5s;
-                    
                 }
-            }
-            .slider__vector{
-                
-                height: 20px;
-                width: 50px;
-                display: flex;
-                justify-content: space-between;
-                img{
-                    position: static;
-                    height: 20px;
-                    width: 15px;   
-                }
-                position: absolute;
-                bottom: 100px;
-                right: 150px;
-                
             }
         }
     }
