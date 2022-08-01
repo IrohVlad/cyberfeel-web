@@ -677,74 +677,35 @@ footer .footer .footer__btns img:not(:last-child) {
   margin-right: 20px;
 }
 
-/*-----------------------------------------galary slick------------------------------------------------------------*/
-.gallary__slick {
-  overflow-x: scroll;
-  display: grid;
-  grid-template-columns: repeat(8, 300px);
-  grid-template-rows: 150px;
-}
-.gallary__slick .gallary__slick-item {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  width: 400px;
-  height: 150px;
-}
-.gallary__slick .gallary__slick-item img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-  max-height: 100%;
-  max-width: 100%;
-}
-
 /*-----------------------------------------galary grid------------------------------------------------------------*/
 .gallary__grid {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  grid-template-rows: repeat(auto-fit, 1fr);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .gallary__grid .gallary__grid-item {
-  cursor: pointer;
-  overflow: hidden;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  border: 2px solid #131313;
-  border-radius: 15px;
-  background-color: #131313;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 5px;
 }
-.gallary__grid .gallary__grid-item img {
+.gallary__grid .gallary__grid-item .grid-item {
+  margin: 5px 0;
+}
+.gallary__grid .gallary__grid-item .grid-item img {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   -o-object-position: center;
      object-position: center;
   -o-object-fit: cover;
      object-fit: cover;
-  max-height: 100%;
-  max-width: 100%;
-}
-.gallary__grid .gallary__grid-item .gallary__grid-title {
-  padding: 5px;
-  text-align: center;
-  color: white;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-.gallary__grid .gallary__grid-item:hover {
-  -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-          transform: scale(1.1);
-  background-color: white;
-  border: 2px solid white;
-}
-.gallary__grid .gallary__grid-item:hover .gallary__grid-title {
-  color: black;
+  height: 100%;
+  width: 100%;
 }
 
 /*-----------------------------------------media------------------------------------------------------------*/
