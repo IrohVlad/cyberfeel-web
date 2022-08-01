@@ -73,6 +73,11 @@ window.addEventListener('DOMContentLoaded', ()=>{
     // });
     
 
+    /*--------------------------------------галлерея------------------------------------------------*/
+
+    /*----------------------------------------запрос-------------------------------------------- */
+
+
     fetch('db.json', {
         method: 'GET',
         headers: {
@@ -86,5 +91,9 @@ window.addEventListener('DOMContentLoaded', ()=>{
         data.header.forEach((item)=>{
             headerFill(item);
         });
+        x.Add(data.gridimg);
     });
+    
+    
+    setTimeout(()=>x.Crop(), 500);
 });
