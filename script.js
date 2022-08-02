@@ -7,7 +7,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
     // .then(data => console.log(data))
     // .catch(data => console.log('error'));
 
-
 /*-----------------------------------------Механика бургера------------------------------------------------------------*/
     const burgers = document.querySelectorAll('.burger');
     burgers.forEach(item=>{
@@ -76,7 +75,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
     /*--------------------------------------галлерея------------------------------------------------*/
 
     /*----------------------------------------запрос-------------------------------------------- */
-
+    let dataFrom = 0;
 
     fetch('db.json', {
         method: 'GET',
@@ -85,15 +84,63 @@ window.addEventListener('DOMContentLoaded', ()=>{
         }
     }).then(data=> data.json())
     .then(data=> {
+        dataFrom = data;
         data.slider.forEach((item)=>{
             sidebarFill(item);
         });
         data.header.forEach((item)=>{
             headerFill(item);
+        })
+        const slider = document.querySelector('.galary__slider');
+        data.gridimg.forEach((item)=>{
+            let imgContainer = document.createElement('div');
+            imgContainer.classList.add('img');
+            imgContainer.innerHTML = `<img src=${item} alt="">`;
+            slider.append(imgContainer);
         });
-        x.Add(data.gridimg);
+
     });
+
+    function maxImg(number){
+        if(number > document.querySelectorAll('.img').length - 1)
+        {
+            return 0;
+        }
+        else if (number < 0){
+            return document.querySelectorAll('.img').length - 1;
+        }
+        else{
+            return number;
+        }
+    }
+    let position = 0;
+    function SliderNext(){
+        position++;
+        position = maxImg(position);
+        const sliderIMG = document.querySelectorAll('.img');
+        sliderIMG.forEach((item)=>{
+            item.style.transform = '';
+            item.style.transform =  `translateX(-${position * 100}vw)`;
+        });
+    }
+    function SliderPrev(){
+        position--;
+        position = maxImg(position);
+        const sliderIMG = document.querySelectorAll('.img');
+        sliderIMG.forEach((item)=>{
+            item.style.transform = '';
+            item.style.transform =  `translateX(-${position * 100}vw)`;
+        });
+        
+    }
+    document.querySelector('.vector-2').addEventListener('click', ()=>{
+        SliderNext(position);
+        console.log(position);
+    });
+    document.querySelector('.vector-1').addEventListener('click', ()=>{
+        SliderPrev(position);
+        console.log(position);
+    });
+
     
-    
-    setTimeout(()=>x.Crop(), 500);
 });

@@ -30,7 +30,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
         }
         Crop(){
             const column = document.querySelectorAll('.gallary__grid-item');
-            console.log(column);
             let minHeight = 0; 
             let heightDiff = [];
             column.forEach(item =>{
@@ -40,14 +39,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
                 });
                 heightDiff.push(now);
-                console.log(now);
                 if(minHeight > now || minHeight == 0){
                     minHeight = now;
                     now = 0;
                 }
             });
             heightDiff = heightDiff.map((item)=> item - minHeight);
-            console.log(heightDiff);
             column.forEach((item, id)=>{
                 Array.from(item.children).forEach((ite, i, arr)=>{
                     ite.style.maxHeight = `${ite.clientHeight - (heightDiff[id]/arr.length)}px`;
