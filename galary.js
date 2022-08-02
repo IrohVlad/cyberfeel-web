@@ -50,10 +50,15 @@ window.addEventListener('DOMContentLoaded', ()=>{
             console.log(heightDiff);
             column.forEach((item, id)=>{
                 Array.from(item.children).forEach((ite, i, arr)=>{
-                    ite.style.height = `${ite.clientHeight - (heightDiff[id]/arr.length)}px`;
+                    ite.style.maxHeight = `${ite.clientHeight - (heightDiff[id]/arr.length)}px`;
                 });
             });
         }
+    }
+
+    const setGalary = async (g, bd)=>{
+        await g.Add(bd);
+        setTimeout(()=>{g.Crop()}, 400);
     }
 
     fetch('db.json', {
@@ -66,36 +71,44 @@ window.addEventListener('DOMContentLoaded', ()=>{
         if (document.documentElement.clientWidth > 1000){
             document.getElementById('galary').innerHTML = '';
             const x = new Galary(document.getElementById('galary'), 6);
-            x.Add(data.gridimg);
-            setTimeout(()=>x.Crop(), 500);
+            setGalary(x, data.gridimg);
         }
-        else if(document.documentElement.clientWidth < 1000){
+        else if(document.documentElement.clientWidth < 1000 && document.documentElement.clientWidth > 550){
             document.getElementById('galary').innerHTML = '';
             const y = new Galary(document.getElementById('galary'), 4);
-            y.Add(data.gridimg);
-            setTimeout(()=>y.Crop(), 500);
+            setGalary(y, data.gridimg);
         }
         else if(document.documentElement.clientWidth < 500){
             document.getElementById('galary').innerHTML = '';
             const z = new Galary(document.getElementById('galary'), 2);
-            z.Add(data.gridimg);
-            setTimeout(()=>z.Crop(), 500);
+            setGalary(z, data.gridimg);
         }
     });
-    // window.addEventListener('resize', ()=>{
-    //     if(document.documentElement.clientWidth < 1000){
-    //         fetch('db.json', {
-    //             method: 'GET',
-    //             headers: {
-    //                 'Content-type': 'aplication/json'
-    //             }
-    //         }).then(data=> data.json())
-    //         .then (data=> {
-    //             galary.innerHTML = '';
-    //             let y = new Galary(galary, 2);
-    //             y.Add(data.gridimg);
-    //             setTimeout(()=>y.Crop(), 500);
-    //         });
-    //     }
-    // });
+    window.addEventListener('resize', ()=>{
+        
+        fetch('db.json', {
+            method: 'GET',
+            headers: {
+                'Content-type': 'aplication/json'
+            }
+        }).then(data=> data.json())
+        .then (data=> {
+            if (document.documentElement.clientWidth > 1000){
+                document.getElementById('galary').innerHTML = '';
+                const x = new Galary(document.getElementById('galary'), 6);
+                setGalary(x, data.gridimg);
+            }
+            else if(document.documentElement.clientWidth < 1000 && document.documentElement.clientWidth > 550){
+                document.getElementById('galary').innerHTML = '';
+                const y = new Galary(document.getElementById('galary'), 4);
+                setGalary(y, data.gridimg);
+            }
+            else if(document.documentElement.clientWidth < 550){
+                document.getElementById('galary').innerHTML = '';
+                const z = new Galary(document.getElementById('galary'), 2);
+                setGalary(z, data.gridimg);
+            }
+        });
+        
+    });
 });
