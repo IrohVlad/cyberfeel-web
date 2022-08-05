@@ -1,4 +1,5 @@
 function galary(){
+    let galaryItem;
     class Galary { //класс сазмещения и выравнивания сетки картинок
         constructor(galary, col){
             this.galary = galary,
@@ -35,9 +36,12 @@ function galary(){
             column.forEach(item =>{
                 let now = 0;
                 Array.from(item.children).forEach((img, i, arr)=>{
+                    
                     now += img.clientHeight;
-
                 });
+                if (item.children.length > column[column.length - 1].children.length){
+                    now += 10;
+                }
                 heightDiff.push(now);
                 if(minHeight > now || minHeight == 0){
                     minHeight = now;
@@ -71,69 +75,109 @@ function galary(){
 
     const setGalary = async (g, bd)=>{ //функция всей работы с картинками
         await g.Add(bd);
-        // setTimeout(()=>{g.Crop()}, 400);
+        let waitImg =  setInterval(()=>{
+            let imgLoad = 0
+            document.querySelectorAll('.grid-item').forEach((item)=>{
+                if(item.clientHeight != 0){
+                    imgLoad++;
+                }
+            });
+            if(imgLoad == document.querySelectorAll('.grid-item').length){
+                g.Crop();
+                clearTimeout(waitImg);
+            }
+        }, 50)
+        // await g.Crop();
         GoToImg();
     }
-
-    fetch('db.json', { // размещение картинок при загрузке страницы
-        method: 'GET',
-        headers: {
-            'Content-type': 'aplication/json'
-        }
-    }).then(data=> data.json())
-    .then(data=> {
-        if (document.documentElement.clientWidth > 1000){
-            document.getElementById('galary').innerHTML = '';
-            const x = new Galary(document.getElementById('galary'), 6);
-            setGalary(x, data.gridimg);
-            // localStorage.setItem('imgArr', data.gridimg);
-            
-        }
-        else if(document.documentElement.clientWidth < 1000 && document.documentElement.clientWidth > 550){
-            document.getElementById('galary').innerHTML = '';
-            const y = new Galary(document.getElementById('galary'), 4);
-            setGalary(y, data.gridimg);
-            // localStorage.setItem('imgArr', data.gridimg);
-        }
-        else if(document.documentElement.clientWidth < 500){
-            document.getElementById('galary').innerHTML = '';
-            const z = new Galary(document.getElementById('galary'), 2);
-            setGalary(z, data.gridimg);
-            // localStorage.setItem('imgArr', data.gridimg);
-        }
-        
-    });
-
-    
-    window.addEventListener('resize', ()=>{ //переразмещение при масштабировании страницы
-        
-        fetch('db.json', {
+    let imgData = [];
+    async function getImgFromDB(){
+        await fetch('db.json', { // размещение картинок при загрузке страницы
             method: 'GET',
             headers: {
                 'Content-type': 'aplication/json'
             }
         }).then(data=> data.json())
-        .then (data=> {
+        .then(data=> {
             if (document.documentElement.clientWidth > 1000){
                 document.getElementById('galary').innerHTML = '';
                 const x = new Galary(document.getElementById('galary'), 6);
                 setGalary(x, data.gridimg);
-                
             }
             else if(document.documentElement.clientWidth < 1000 && document.documentElement.clientWidth > 550){
                 document.getElementById('galary').innerHTML = '';
                 const y = new Galary(document.getElementById('galary'), 4);
                 setGalary(y, data.gridimg);
-                
             }
-            else if(document.documentElement.clientWidth < 550){
+            else if(document.documentElement.clientWidth < 500){
                 document.getElementById('galary').innerHTML = '';
                 const z = new Galary(document.getElementById('galary'), 2);
                 setGalary(z, data.gridimg);
-                
             }
         });
+        galaryItem = document.querySelectorAll('.img img');
+        console.log(galaryItem);
+        galaryItem.forEach((item)=>{
+            imgData.push({
+            src: item.getAttribute('src')
+            // title: item.getAttribute('title')
+            });
+        }, 0);   
+        console.log(imgData);
+    }
+    getImgFromDB();
+    
+
+
+    
+    window.addEventListener('resize', ()=>{ //переразмещение при масштабировании страницы
+        
+    //     fetch('db.json', {
+    //         method: 'GET',
+    //         headers: {
+    //             'Content-type': 'aplication/json'
+    //         }
+    //     }).then(data=> data.json())
+    //     .then (data=> {
+    //         if (document.documentElement.clientWidth > 1000){
+    //             document.getElementById('galary').innerHTML = '';
+    //             const x = new Galary(document.getElementById('galary'), 6);
+    //             setGalary(x, data.gridimg);
+                
+    //         }
+    //         else if(document.documentElement.clientWidth < 1000 && document.documentElement.clientWidth > 550){
+    //             document.getElementById('galary').innerHTML = '';
+    //             const y = new Galary(document.getElementById('galary'), 4);
+    //             setGalary(y, data.gridimg);
+                
+    //         }
+    //         else if(document.documentElement.clientWidth < 550){
+    //             document.getElementById('galary').innerHTML = '';
+    //             const z = new Galary(document.getElementById('galary'), 2);
+    //             setGalary(z, data.gridimg);
+                
+    //         }
+    //     });
+    if (document.documentElement.clientWidth > 1000){
+        document.getElementById('galary').innerHTML = '';
+        const x = new Galary(document.getElementById('galary'), 6);
+        setGalary(x, imgData);
+        
+    }
+    else if(document.documentElement.clientWidth < 1000 && document.documentElement.clientWidth > 550){
+        document.getElementById('galary').innerHTML = '';
+        const y = new Galary(document.getElementById('galary'), 4);
+        setGalary(y, imgData);
+        
+    }
+    else if(document.documentElement.clientWidth < 550){
+        document.getElementById('galary').innerHTML = '';
+        const z = new Galary(document.getElementById('galary'), 2);
+        setGalary(z, imgData);
+        
+    }
     });
+    
 }
 
 export default galary;

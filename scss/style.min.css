@@ -742,15 +742,19 @@ footer .footer .footer__btns img:not(:last-child) {
   -webkit-transition-duration: 300ms;
        -o-transition-duration: 300ms;
           transition-duration: 300ms;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .gallary__grid .gallary__grid-item .grid-item img {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   -o-object-position: center;
      object-position: center;
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 100%;
   width: 100%;
 }
 .gallary__grid .gallary__grid-item .grid-item:hover {

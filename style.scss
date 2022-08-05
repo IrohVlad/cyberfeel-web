@@ -629,11 +629,14 @@ footer{
             margin: 5px 0;
             transition: transform;
             transition-duration: 300ms;
+            overflow: hidden;
+            display: flex;
+            align-items:center;
             img{
                 box-sizing:content-box;
                 object-position: center;
-                object-fit: cover;
-                height: 100%;
+                // object-fit:cover;
+                // height: 100%;
                 width: 100%;
             }
             &:hover{
