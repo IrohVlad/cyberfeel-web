@@ -1,0 +1,13 @@
+function header(content){
+    let elem = document.createElement('li');
+    elem.classList.add('header__nav_item');
+    elem.classList.add('_btn');
+    elem.textContent = content;
+    let elem1 = document.createElement('li');
+    elem1.classList.add('header__nav_item');
+    elem1.classList.add('_btn');
+    elem1.textContent = content;
+    document.querySelector('.header__nav').append(elem1);
+    document.querySelector('.header__burger_content').append(elem);
+}
+export {header};

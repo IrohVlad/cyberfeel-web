@@ -627,12 +627,18 @@ footer{
         margin: 0 5px;
         .grid-item{
             margin: 5px 0;
+            transition: transform;
+            transition-duration: 300ms;
             img{
                 box-sizing:content-box;
                 object-position: center;
                 object-fit: cover;
                 height: 100%;
                 width: 100%;
+            }
+            &:hover{
+                cursor: pointer;
+                transform: scale(1.1);
             }
         }
     }

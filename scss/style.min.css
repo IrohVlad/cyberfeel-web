@@ -734,6 +734,14 @@ footer .footer .footer__btns img:not(:last-child) {
 }
 .gallary__grid .gallary__grid-item .grid-item {
   margin: 5px 0;
+  -webkit-transition: -webkit-transform;
+  transition: -webkit-transform;
+  -o-transition: transform;
+  transition: transform;
+  transition: transform, -webkit-transform;
+  -webkit-transition-duration: 300ms;
+       -o-transition-duration: 300ms;
+          transition-duration: 300ms;
 }
 .gallary__grid .gallary__grid-item .grid-item img {
   -webkit-box-sizing: content-box;
@@ -744,6 +752,12 @@ footer .footer .footer__btns img:not(:last-child) {
      object-fit: cover;
   height: 100%;
   width: 100%;
+}
+.gallary__grid .gallary__grid-item .grid-item:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 /*-----------------------------------------media------------------------------------------------------------*/

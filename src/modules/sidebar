@@ -1,0 +1,46 @@
+function sidebar(){
+    function sidebarFill(content){
+        let elem = document.createElement('li');
+        elem.classList.add('sidebar__nav_item');
+        elem.classList.add('_btn');
+        elem.textContent = content;
+        let elem1 = document.createElement('li');
+        elem1.classList.add('sidebar__nav_item');
+        elem1.classList.add('_btn');
+        elem1.textContent = content;
+        let elem2 = document.createElement('li');
+        elem2.classList.add('sidebar__nav_item');
+        elem2.classList.add('_btn');
+        elem2.textContent = content;
+        document.querySelector('.sidebar__nav').append(elem1);
+        document.querySelectorAll('.burger__content')[0].append(elem);
+        document.querySelectorAll('.burger__content')[1].append(elem2);
+    }
+    /*----------------------------------------запрос--------------------------------------------*/
+
+
+    fetch('db.json', {
+        method: 'GET',
+        headers: {
+            'Content-type': 'aplication/json'
+        }
+    }).then(data=> data.json())
+    .then(data=> {
+        data.slider.forEach((item)=>{
+            sidebarFill(item);
+        });
+        data.header.forEach((item)=>{
+            headerFill(item);
+        })
+        const slider = document.querySelector('.galary__slider');
+        data.gridimg.forEach((item)=>{
+            let imgContainer = document.createElement('div');
+            imgContainer.classList.add('img');
+            imgContainer.innerHTML = `<img src=${item.src} alt="">`;
+            slider.append(imgContainer);
+        });
+    });
+}
+
+export default sidebar;
+import { header as headerFill} from "./header";

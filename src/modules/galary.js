@@ -1,5 +1,5 @@
-window.addEventListener('DOMContentLoaded', ()=>{
-    class Galary {
+function galary(){
+    class Galary { //класс сазмещения и выравнивания сетки картинок
         constructor(galary, col){
             this.galary = galary,
             this.columnCount = col,
@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                 }
                 let img = document.createElement('div');
                 img.classList.add('grid-item');
-                img.innerHTML = `<img src=${imgs[i]} alt="">`;
+                img.innerHTML = `<img class="grid-img" index=${i} src=${imgs[i].src} alt="">`;
                 column[columnIndex].append(img);
                 columnIndex++;
             }
@@ -53,12 +53,29 @@ window.addEventListener('DOMContentLoaded', ()=>{
         }
     }
 
-    const setGalary = async (g, bd)=>{
+    function GoToImg(){ //переход по клику на картинку
+        Array.from(document.querySelector('.gallary__grid').children).forEach((item)=>{
+            item.addEventListener('click', (e)=>{
+                const target = e.target;
+                if (target && target.classList.contains('grid-img')){
+                    console.log(target);
+                    let index = target.getAttribute('index');
+                    document.querySelectorAll('.img').forEach((item)=>{
+                        item.style.transform = '';
+                        item.style.transform =  `translateX(-${index * 100}vw)`;
+                    });
+                }
+            });
+        });
+    };
+
+    const setGalary = async (g, bd)=>{ //функция всей работы с картинками
         await g.Add(bd);
-        setTimeout(()=>{g.Crop()}, 400);
+        // setTimeout(()=>{g.Crop()}, 400);
+        GoToImg();
     }
 
-    fetch('db.json', {
+    fetch('db.json', { // размещение картинок при загрузке страницы
         method: 'GET',
         headers: {
             'Content-type': 'aplication/json'
@@ -69,19 +86,26 @@ window.addEventListener('DOMContentLoaded', ()=>{
             document.getElementById('galary').innerHTML = '';
             const x = new Galary(document.getElementById('galary'), 6);
             setGalary(x, data.gridimg);
+            // localStorage.setItem('imgArr', data.gridimg);
+            
         }
         else if(document.documentElement.clientWidth < 1000 && document.documentElement.clientWidth > 550){
             document.getElementById('galary').innerHTML = '';
             const y = new Galary(document.getElementById('galary'), 4);
             setGalary(y, data.gridimg);
+            // localStorage.setItem('imgArr', data.gridimg);
         }
         else if(document.documentElement.clientWidth < 500){
             document.getElementById('galary').innerHTML = '';
             const z = new Galary(document.getElementById('galary'), 2);
             setGalary(z, data.gridimg);
+            // localStorage.setItem('imgArr', data.gridimg);
         }
+        
     });
-    window.addEventListener('resize', ()=>{
+
+    
+    window.addEventListener('resize', ()=>{ //переразмещение при масштабировании страницы
         
         fetch('db.json', {
             method: 'GET',
@@ -94,18 +118,22 @@ window.addEventListener('DOMContentLoaded', ()=>{
                 document.getElementById('galary').innerHTML = '';
                 const x = new Galary(document.getElementById('galary'), 6);
                 setGalary(x, data.gridimg);
+                
             }
             else if(document.documentElement.clientWidth < 1000 && document.documentElement.clientWidth > 550){
                 document.getElementById('galary').innerHTML = '';
                 const y = new Galary(document.getElementById('galary'), 4);
                 setGalary(y, data.gridimg);
+                
             }
             else if(document.documentElement.clientWidth < 550){
                 document.getElementById('galary').innerHTML = '';
                 const z = new Galary(document.getElementById('galary'), 2);
                 setGalary(z, data.gridimg);
+                
             }
         });
-        
     });
-});
+}
+
+export default galary;

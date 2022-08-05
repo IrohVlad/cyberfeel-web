@@ -2,49 +2,137 @@
     "slider":["DIGITAL ART","CONCEPT ART","3D VISUALISATION","TATTOO","HANDMADE"],
     "header":["INFORMATION","ABOUT ME","CONTACT"],
     "gridimg":[
-        "sourse\\big\\Aries.jpg", 
-        "sourse\\big\\generator_01.jpg", 
-        "sourse\\big\\city_05a.jpg", 
-        "sourse\\big\\Aries.jpg", 
-        "sourse\\big\\Aries.jpg", 
-        "sourse\\big\\city_05a.jpg",  
-        "sourse\\big\\Aries.jpg", 
-        "sourse\\big\\generator_01.jpg", 
-        "sourse\\big\\city_05a.jpg",
-        "sourse\\big\\generator_01.jpg", 
-        "sourse\\big\\city_05a.jpg", 
-        "sourse\\big\\Aries.jpg", 
-        "sourse\\big\\Aries.jpg",
-        "sourse\\big\\generator_01.jpg", 
-        "sourse\\big\\city_05a.jpg", 
-        "sourse\\big\\Aries.jpg", 
-        "sourse\\big\\generator_01.jpg", 
-        "sourse\\big\\city_05a.jpg", 
-        "sourse\\big\\generator_01.jpg", 
-        "sourse\\big\\city_05a.jpg", 
-        "sourse\\big\\Aries.jpg", 
-        "sourse\\big\\generator_01.jpg",
-        "sourse\\big\\Aries.jpg", 
-        "sourse\\big\\Aries.jpg", 
-        "sourse\\big\\generator_01.jpg", 
-        "sourse\\big\\city_05a.jpg", 
-        "sourse\\big\\Aries.jpg", 
-        "sourse\\big\\Aries.jpg", 
-        "sourse\\big\\city_05a.jpg", 
-        "sourse\\big\\Aries.jpg", 
-        "sourse\\big\\generator_01.jpg", 
-        "sourse\\big\\city_05a.jpg",
-        "sourse\\big\\generator_01.jpg", 
-        "sourse\\big\\city_05a.jpg", 
-        "sourse\\big\\Aries.jpg", 
-        "sourse\\big\\Aries.jpg",
-        "sourse\\big\\generator_01.jpg", 
-        "sourse\\big\\city_05a.jpg", 
-        "sourse\\big\\Aries.jpg", 
-        "sourse\\big\\generator_01.jpg", 
-        "sourse\\big\\city_05a.jpg", 
-        "sourse\\big\\Aries.jpg", 
-        "sourse\\big\\generator_01.jpg"
-        
+        {
+            "src": "sourse\\big\\Aries.jpg",
+            "title": "Aries"
+        },
+        {
+            "src": "sourse\\big\\city_05a.jpg",
+            "title": "City"
+        },
+        {
+            "src": "sourse\\big\\generator_01.jpg",
+            "title": "Generator"
+        },
+        {
+            "src": "sourse\\big\\The_Time_Machine.jpg",
+            "title": "The Time Machine"
+        },
+        {
+            "src": "sourse\\big\\diesel_heart.jpg",
+            "title": "Heart"
+        },
+        {
+            "src": "sourse\\big\\Aries.jpg",
+            "title": "Aries"
+        },
+        {
+            "src": "sourse\\big\\city_05a.jpg",
+            "title": "City"
+        },
+        {
+            "src": "sourse\\big\\generator_01.jpg",
+            "title": "Generator"
+        },
+        {
+            "src": "sourse\\big\\The_Time_Machine.jpg",
+            "title": "The Time Machine"
+        },
+        {
+            "src": "sourse\\big\\diesel_heart.jpg",
+            "title": "Heart"
+        },
+        {
+            "src": "sourse\\big\\Aries.jpg",
+            "title": "Aries"
+        },
+        {
+            "src": "sourse\\big\\city_05a.jpg",
+            "title": "City"
+        },
+        {
+            "src": "sourse\\big\\generator_01.jpg",
+            "title": "Generator"
+        },
+        {
+            "src": "sourse\\big\\diesel_heart.jpg",
+            "title": "Heart"
+        },
+        {
+            "src": "sourse\\big\\Aries.jpg",
+            "title": "Aries"
+        },
+        {
+            "src": "sourse\\big\\city_05a.jpg",
+            "title": "City"
+        },
+        {
+            "src": "sourse\\big\\generator_01.jpg",
+            "title": "Generator"
+        },
+        {
+            "src": "sourse\\big\\The_Time_Machine.jpg",
+            "title": "The Time Machine"
+        },
+        {
+            "src": "sourse\\big\\diesel_heart.jpg",
+            "title": "Heart"
+        },
+        {
+            "src": "sourse\\big\\Aries.jpg",
+            "title": "Aries"
+        },
+        {
+            "src": "sourse\\big\\city_05a.jpg",
+            "title": "City"
+        },
+        {
+            "src": "sourse\\big\\generator_01.jpg",
+            "title": "Generator"
+        },
+        {
+            "src": "sourse\\big\\diesel_heart.jpg",
+            "title": "Heart"
+        },
+        {
+            "src": "sourse\\big\\generator_01.jpg",
+            "title": "Generator"
+        },
+        {
+            "src": "sourse\\big\\diesel_heart.jpg",
+            "title": "Heart"
+        },
+        {
+            "src": "sourse\\big\\Aries.jpg",
+            "title": "Aries"
+        },
+        {
+            "src": "sourse\\big\\city_05a.jpg",
+            "title": "City"
+        },
+        {
+            "src": "sourse\\big\\generator_01.jpg",
+            "title": "Generator"
+        },
+        {
+            "src": "sourse\\big\\diesel_heart.jpg",
+            "title": "Heart"
+        },
+        {
+            "src": "sourse\\big\\Aries.jpg",
+            "title": "Aries"
+        },
+        {
+            "src": "sourse\\big\\city_05a.jpg",
+            "title": "City"
+        },
+        {
+            "src": "sourse\\big\\generator_01.jpg",
+            "title": "Generator"
+        },
+        {
+            "src": "sourse\\big\\diesel_heart.jpg",
+            "title": "Heart"
+        }
     ]
 }
